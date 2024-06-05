@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C305C1F52C0C936A00830ADE /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1F42C0C936A00830ADE /* InputView.swift */; };
+		C305C1F82C0CA2C500830ADE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1F72C0CA2C500830ADE /* LearnView.swift */; };
+		C305C1FA2C0CABF500830ADE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1F92C0CABF500830ADE /* ButtonView.swift */; };
+		C305C1FC2C102F4A00830ADE /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1FB2C102F4A00830ADE /* AddButtonView.swift */; };
+		C305C1FE2C10318800830ADE /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1FD2C10318800830ADE /* AddTripView.swift */; };
+		C305C2012C1044C600830ADE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2002C1044C600830ADE /* Services.swift */; };
+		C30F4A122BF459E900F6734F /* TravoilaNewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A112BF459E900F6734F /* TravoilaNewApp.swift */; };
+		C30F4A142BF459E900F6734F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A132BF459E900F6734F /* ContentView.swift */; };
+		C30F4A162BF459EA00F6734F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30F4A152BF459EA00F6734F /* Assets.xcassets */; };
+		C30F4A192BF459EA00F6734F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30F4A182BF459EA00F6734F /* Preview Assets.xcassets */; };
+		C30F4A232BF459EA00F6734F /* TravoilaNewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A222BF459EA00F6734F /* TravoilaNewTests.swift */; };
+		C30F4A2D2BF459EA00F6734F /* TravoilaNewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A2C2BF459EA00F6734F /* TravoilaNewUITests.swift */; };
+		C30F4A2F2BF459EA00F6734F /* TravoilaNewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A2E2BF459EA00F6734F /* TravoilaNewUITestsLaunchTests.swift */; };
+		C30F4A3D2BF45B0F00F6734F /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A3C2BF45B0F00F6734F /* HomepageView.swift */; };
+		C30F4A3F2BF45B2800F6734F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A3E2BF45B2800F6734F /* OnboardingView.swift */; };
+		C30F4A412BF45B8500F6734F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A402BF45B8500F6734F /* Theme.swift */; };
+		C30F4A472BF45EFF00F6734F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A462BF45EFF00F6734F /* LoginView.swift */; };
+		C30F4A4B2BF46DB300F6734F /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A4A2BF46DB300F6734F /* SplashScreenView.swift */; };
+		C30F4A4D2BF46FB900F6734F /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A4C2BF46FB900F6734F /* OnboardingModel.swift */; };
+		C30F4A4F2BF4F5D700F6734F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C30F4A4E2BF4F5D700F6734F /* GoogleService-Info.plist */; };
+		C30F4A522BF5D61D00F6734F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C30F4A512BF5D61D00F6734F /* FirebaseAuth */; };
+		C30F4A542BF5D61D00F6734F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C30F4A532BF5D61D00F6734F /* FirebaseFirestore */; };
+		C30F4A5C2BF6409800F6734F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A5B2BF6409800F6734F /* UserModel.swift */; };
+		C30F4A5E2BF6F94C00F6734F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A5D2BF6F94C00F6734F /* UserViewModel.swift */; };
+		C385543A2BFF296E006FA683 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38554392BFF296E006FA683 /* LoadingView.swift */; };
+		C385543C2C008716006FA683 /* ShowErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385543B2C008716006FA683 /* ShowErrorView.swift */; };
+		C385543E2C041422006FA683 /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385543D2C041422006FA683 /* TripView.swift */; };
+		C38D2B302C0480BC00C3648A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D2B2F2C0480BC00C3648A /* RegisterView.swift */; };
+		C38D2B362C0597AE00C3648A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D2B352C0597AE00C3648A /* TabBarView.swift */; };
+		C38D2B382C05C11F00C3648A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D2B372C05C11F00C3648A /* NotificationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C30F4A1F2BF459EA00F6734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C30F4A062BF459E900F6734F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C30F4A0D2BF459E900F6734F;
+			remoteInfo = TravoilaNew;
+		};
+		C30F4A292BF459EA00F6734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C30F4A062BF459E900F6734F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C30F4A0D2BF459E900F6734F;
+			remoteInfo = TravoilaNew;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C305C1F42C0C936A00830ADE /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		C305C1F72C0CA2C500830ADE /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		C305C1F92C0CABF500830ADE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		C305C1FB2C102F4A00830ADE /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		C305C1FD2C10318800830ADE /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
+		C305C2002C1044C600830ADE /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		C30F4A0E2BF459E900F6734F /* TravoilaNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravoilaNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30F4A112BF459E900F6734F /* TravoilaNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravoilaNewApp.swift; sourceTree = "<group>"; };
+		C30F4A132BF459E900F6734F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C30F4A152BF459EA00F6734F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C30F4A182BF459EA00F6734F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C30F4A1E2BF459EA00F6734F /* TravoilaNewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravoilaNewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30F4A222BF459EA00F6734F /* TravoilaNewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravoilaNewTests.swift; sourceTree = "<group>"; };
+		C30F4A282BF459EA00F6734F /* TravoilaNewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravoilaNewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30F4A2C2BF459EA00F6734F /* TravoilaNewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravoilaNewUITests.swift; sourceTree = "<group>"; };
+		C30F4A2E2BF459EA00F6734F /* TravoilaNewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravoilaNewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C30F4A3C2BF45B0F00F6734F /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		C30F4A3E2BF45B2800F6734F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C30F4A402BF45B8500F6734F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C30F4A462BF45EFF00F6734F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C30F4A4A2BF46DB300F6734F /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		C30F4A4C2BF46FB900F6734F /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		C30F4A4E2BF4F5D700F6734F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C30F4A5B2BF6409800F6734F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C30F4A5D2BF6F94C00F6734F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		C38554392BFF296E006FA683 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C385543B2C008716006FA683 /* ShowErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorView.swift; sourceTree = "<group>"; };
+		C385543D2C041422006FA683 /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
+		C38D2B2F2C0480BC00C3648A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C38D2B352C0597AE00C3648A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		C38D2B372C05C11F00C3648A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C30F4A0B2BF459E900F6734F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30F4A522BF5D61D00F6734F /* FirebaseAuth in Frameworks */,
+				C30F4A542BF5D61D00F6734F /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A1B2BF459EA00F6734F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A252BF459EA00F6734F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C305C1F62C0C996600830ADE /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C38D2B2F2C0480BC00C3648A /* RegisterView.swift */,
+				C30F4A462BF45EFF00F6734F /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C305C1FF2C1044B900830ADE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C305C2002C1044C600830ADE /* Services.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C30F4A052BF459E900F6734F = {
+			isa = PBXGroup;
+			children = (
+				C30F4A4E2BF4F5D700F6734F /* GoogleService-Info.plist */,
+				C30F4A102BF459E900F6734F /* TravoilaNew */,
+				C30F4A212BF459EA00F6734F /* TravoilaNewTests */,
+				C30F4A2B2BF459EA00F6734F /* TravoilaNewUITests */,
+				C30F4A0F2BF459E900F6734F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C30F4A0F2BF459E900F6734F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A0E2BF459E900F6734F /* TravoilaNew.app */,
+				C30F4A1E2BF459EA00F6734F /* TravoilaNewTests.xctest */,
+				C30F4A282BF459EA00F6734F /* TravoilaNewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C30F4A102BF459E900F6734F /* TravoilaNew */ = {
+			isa = PBXGroup;
+			children = (
+				C305C1FF2C1044B900830ADE /* Services */,
+				C30F4A5A2BF6406200F6734F /* ViewModels */,
+				C30F4A552BF635DB00F6734F /* Models */,
+				C30F4A3B2BF45AB000F6734F /* Views */,
+				C30F4A112BF459E900F6734F /* TravoilaNewApp.swift */,
+				C30F4A132BF459E900F6734F /* ContentView.swift */,
+				C30F4A152BF459EA00F6734F /* Assets.xcassets */,
+				C30F4A172BF459EA00F6734F /* Preview Content */,
+			);
+			path = TravoilaNew;
+			sourceTree = "<group>";
+		};
+		C30F4A172BF459EA00F6734F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A182BF459EA00F6734F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C30F4A212BF459EA00F6734F /* TravoilaNewTests */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A222BF459EA00F6734F /* TravoilaNewTests.swift */,
+			);
+			path = TravoilaNewTests;
+			sourceTree = "<group>";
+		};
+		C30F4A2B2BF459EA00F6734F /* TravoilaNewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A2C2BF459EA00F6734F /* TravoilaNewUITests.swift */,
+				C30F4A2E2BF459EA00F6734F /* TravoilaNewUITestsLaunchTests.swift */,
+			);
+			path = TravoilaNewUITests;
+			sourceTree = "<group>";
+		};
+		C30F4A3B2BF45AB000F6734F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C305C1F62C0C996600830ADE /* Auth */,
+				C38D2B342C05979C00C3648A /* TabBar */,
+				C38D2B322C05975900C3648A /* Utility */,
+				C38D2B312C05974900C3648A /* Homepage */,
+				C30F4A3E2BF45B2800F6734F /* OnboardingView.swift */,
+				C30F4A4A2BF46DB300F6734F /* SplashScreenView.swift */,
+				C38D2B372C05C11F00C3648A /* NotificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C30F4A552BF635DB00F6734F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A402BF45B8500F6734F /* Theme.swift */,
+				C30F4A5B2BF6409800F6734F /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C30F4A5A2BF6406200F6734F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A4C2BF46FB900F6734F /* OnboardingModel.swift */,
+				C30F4A5D2BF6F94C00F6734F /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C38D2B312C05974900C3648A /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				C30F4A3C2BF45B0F00F6734F /* HomepageView.swift */,
+				C385543D2C041422006FA683 /* TripView.swift */,
+				C305C1FD2C10318800830ADE /* AddTripView.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		C38D2B322C05975900C3648A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C385543B2C008716006FA683 /* ShowErrorView.swift */,
+				C38554392BFF296E006FA683 /* LoadingView.swift */,
+				C305C1F42C0C936A00830ADE /* InputView.swift */,
+				C305C1F72C0CA2C500830ADE /* LearnView.swift */,
+				C305C1F92C0CABF500830ADE /* ButtonView.swift */,
+				C305C1FB2C102F4A00830ADE /* AddButtonView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C38D2B342C05979C00C3648A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C38D2B352C0597AE00C3648A /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C30F4A0D2BF459E900F6734F /* TravoilaNew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C30F4A322BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNew" */;
+			buildPhases = (
+				C30F4A0A2BF459E900F6734F /* Sources */,
+				C30F4A0B2BF459E900F6734F /* Frameworks */,
+				C30F4A0C2BF459E900F6734F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravoilaNew;
+			packageProductDependencies = (
+				C30F4A512BF5D61D00F6734F /* FirebaseAuth */,
+				C30F4A532BF5D61D00F6734F /* FirebaseFirestore */,
+			);
+			productName = TravoilaNew;
+			productReference = C30F4A0E2BF459E900F6734F /* TravoilaNew.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C30F4A1D2BF459EA00F6734F /* TravoilaNewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C30F4A352BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNewTests" */;
+			buildPhases = (
+				C30F4A1A2BF459EA00F6734F /* Sources */,
+				C30F4A1B2BF459EA00F6734F /* Frameworks */,
+				C30F4A1C2BF459EA00F6734F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C30F4A202BF459EA00F6734F /* PBXTargetDependency */,
+			);
+			name = TravoilaNewTests;
+			productName = TravoilaNewTests;
+			productReference = C30F4A1E2BF459EA00F6734F /* TravoilaNewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C30F4A272BF459EA00F6734F /* TravoilaNewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C30F4A382BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNewUITests" */;
+			buildPhases = (
+				C30F4A242BF459EA00F6734F /* Sources */,
+				C30F4A252BF459EA00F6734F /* Frameworks */,
+				C30F4A262BF459EA00F6734F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C30F4A2A2BF459EA00F6734F /* PBXTargetDependency */,
+			);
+			name = TravoilaNewUITests;
+			productName = TravoilaNewUITests;
+			productReference = C30F4A282BF459EA00F6734F /* TravoilaNewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C30F4A062BF459E900F6734F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					C30F4A0D2BF459E900F6734F = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					C30F4A1D2BF459EA00F6734F = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = C30F4A0D2BF459E900F6734F;
+					};
+					C30F4A272BF459EA00F6734F = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = C30F4A0D2BF459E900F6734F;
+					};
+				};
+			};
+			buildConfigurationList = C30F4A092BF459E900F6734F /* Build configuration list for PBXProject "TravoilaNew" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C30F4A052BF459E900F6734F;
+			packageReferences = (
+				C30F4A502BF5D61D00F6734F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = C30F4A0F2BF459E900F6734F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C30F4A0D2BF459E900F6734F /* TravoilaNew */,
+				C30F4A1D2BF459EA00F6734F /* TravoilaNewTests */,
+				C30F4A272BF459EA00F6734F /* TravoilaNewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C30F4A0C2BF459E900F6734F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30F4A192BF459EA00F6734F /* Preview Assets.xcassets in Resources */,
+				C30F4A162BF459EA00F6734F /* Assets.xcassets in Resources */,
+				C30F4A4F2BF4F5D700F6734F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A1C2BF459EA00F6734F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A262BF459EA00F6734F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C30F4A0A2BF459E900F6734F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30F4A472BF45EFF00F6734F /* LoginView.swift in Sources */,
+				C30F4A5E2BF6F94C00F6734F /* UserViewModel.swift in Sources */,
+				C30F4A3D2BF45B0F00F6734F /* HomepageView.swift in Sources */,
+				C305C2012C1044C600830ADE /* Services.swift in Sources */,
+				C38D2B382C05C11F00C3648A /* NotificationView.swift in Sources */,
+				C38D2B302C0480BC00C3648A /* RegisterView.swift in Sources */,
+				C30F4A3F2BF45B2800F6734F /* OnboardingView.swift in Sources */,
+				C385543C2C008716006FA683 /* ShowErrorView.swift in Sources */,
+				C305C1F82C0CA2C500830ADE /* LearnView.swift in Sources */,
+				C385543A2BFF296E006FA683 /* LoadingView.swift in Sources */,
+				C305C1F52C0C936A00830ADE /* InputView.swift in Sources */,
+				C30F4A412BF45B8500F6734F /* Theme.swift in Sources */,
+				C385543E2C041422006FA683 /* TripView.swift in Sources */,
+				C30F4A4D2BF46FB900F6734F /* OnboardingModel.swift in Sources */,
+				C30F4A142BF459E900F6734F /* ContentView.swift in Sources */,
+				C30F4A122BF459E900F6734F /* TravoilaNewApp.swift in Sources */,
+				C30F4A5C2BF6409800F6734F /* UserModel.swift in Sources */,
+				C305C1FA2C0CABF500830ADE /* ButtonView.swift in Sources */,
+				C305C1FE2C10318800830ADE /* AddTripView.swift in Sources */,
+				C38D2B362C0597AE00C3648A /* TabBarView.swift in Sources */,
+				C305C1FC2C102F4A00830ADE /* AddButtonView.swift in Sources */,
+				C30F4A4B2BF46DB300F6734F /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A1A2BF459EA00F6734F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30F4A232BF459EA00F6734F /* TravoilaNewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30F4A242BF459EA00F6734F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30F4A2D2BF459EA00F6734F /* TravoilaNewUITests.swift in Sources */,
+				C30F4A2F2BF459EA00F6734F /* TravoilaNewUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C30F4A202BF459EA00F6734F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C30F4A0D2BF459E900F6734F /* TravoilaNew */;
+			targetProxy = C30F4A1F2BF459EA00F6734F /* PBXContainerItemProxy */;
+		};
+		C30F4A2A2BF459EA00F6734F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C30F4A0D2BF459E900F6734F /* TravoilaNew */;
+			targetProxy = C30F4A292BF459EA00F6734F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C30F4A302BF459EA00F6734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C30F4A312BF459EA00F6734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C30F4A332BF459EA00F6734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TravoilaNew/Preview Content\"";
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNew;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C30F4A342BF459EA00F6734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TravoilaNew/Preview Content\"";
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNew;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C30F4A362BF459EA00F6734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravoilaNew.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravoilaNew";
+			};
+			name = Debug;
+		};
+		C30F4A372BF459EA00F6734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravoilaNew.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravoilaNew";
+			};
+			name = Release;
+		};
+		C30F4A392BF459EA00F6734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravoilaNew;
+			};
+			name = Debug;
+		};
+		C30F4A3A2BF459EA00F6734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY4LC4DV9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakkimudhoffar.TravoilaNewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravoilaNew;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C30F4A092BF459E900F6734F /* Build configuration list for PBXProject "TravoilaNew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30F4A302BF459EA00F6734F /* Debug */,
+				C30F4A312BF459EA00F6734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C30F4A322BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30F4A332BF459EA00F6734F /* Debug */,
+				C30F4A342BF459EA00F6734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C30F4A352BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30F4A362BF459EA00F6734F /* Debug */,
+				C30F4A372BF459EA00F6734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C30F4A382BF459EA00F6734F /* Build configuration list for PBXNativeTarget "TravoilaNewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30F4A392BF459EA00F6734F /* Debug */,
+				C30F4A3A2BF459EA00F6734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C30F4A502BF5D61D00F6734F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C30F4A512BF5D61D00F6734F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C30F4A502BF5D61D00F6734F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C30F4A532BF5D61D00F6734F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C30F4A502BF5D61D00F6734F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C30F4A062BF459E900F6734F /* Project object */;
+}
