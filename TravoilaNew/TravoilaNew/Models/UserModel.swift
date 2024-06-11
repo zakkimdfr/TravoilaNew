@@ -7,11 +7,10 @@
 
 import Foundation
 
-struct UserModel: Identifiable {
+struct UserModel: Identifiable, Codable {
     var id: String {uid}
     let uid: String
     var name: String
     var email: String
     var password: String
-    var picture: String
 }

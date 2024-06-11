@@ -20,14 +20,6 @@ struct RegisterView: View {
     @StateObject var userViewModel: UserViewModel
     @Environment(\.presentationMode) var presentationMode
     
-    func checkPassword() {
-        if password == confirmPassword {
-            userViewModel.authError = nil
-        } else {
-            userViewModel.authError = "Passwords do not match"
-        }
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -53,6 +45,17 @@ struct RegisterView: View {
                                              keyboardType: .emailAddress)
                     .textInputAutocapitalization(.never)
                     
+                    if !email.isEmpty {
+                        if userViewModel.isValidEmail(email) {
+                            ValidationMessage(image: "checkmark.circle", message: "Email is Valid", color: .green)
+                                .frame(width: UIScreen.main.bounds.width - 35, alignment: .trailing)
+                        } else {
+                            ValidationMessage(image: "xmark.circle", message: "Invalid Email!", color: .red)
+                                .frame(width: UIScreen.main.bounds.width - 35, alignment: .trailing)
+                                .padding(.trailing)
+                        }
+                    }
+                    
                     InputFieldWithValidation(text: $password,
                                              title: "Password",
                                              placeholder: "Enter Your Password",
@@ -60,6 +63,21 @@ struct RegisterView: View {
                                              isEmpty: password.isEmpty,
                                              isShowed: $isShowed)
                     .textInputAutocapitalization(.never)
+                    
+                    if !password.isEmpty {
+                        if password.count > 7 {
+                            ValidationMessage(image: "checkmark.circle",
+                                              message: "Password equals or more than 8",
+                                              color: .green)
+                            .frame(width: UIScreen.main.bounds.width - 35, alignment: .trailing)
+                            
+                        } else {
+                            ValidationMessage(image: "xmark.circle",
+                                              message: "Password less than 8 characters",
+                                              color: .red)
+                            .frame(width: UIScreen.main.bounds.width - 35, alignment: .trailing)
+                        }
+                    }
                     
                     InputFieldWithValidation(text: $confirmPassword,
                                              title: "Confirm Password",
@@ -82,7 +100,7 @@ struct RegisterView: View {
                     
                     NavigationLink(destination: LoginView(), isActive: $userViewModel.isRegistered) {
                         Button(action: {
-                            validateAndSignUp()
+//                            validateAndSignUp()
                         }) {
                             ButtonView(button: "Sign Up")
                         }
@@ -113,18 +131,10 @@ struct RegisterView: View {
         }
     }
     
-    private func validateAndSignUp() {
-        checkPassword()
-        if userViewModel.authError != nil || name.isEmpty || email.isEmpty || password.isEmpty {
-            showAlert = true
-        } else if userViewModel.isValidEmail(email) {
-            userViewModel.signUp(uid: uid, name: name, email: email, password: password, picture: picture)
-        }
-    }
 }
 
 #Preview {
-    RegisterView(userViewModel: UserViewModel())
+    RegisterView(userViewModel: UserViewModel(userService: AuthManager.shared, firestoreService: FirestoreManager.shared))
 }
 
 extension RegisterView: AuthForm {

@@ -10,11 +10,11 @@ import Firebase
 
 @main
 struct TravoilaNewApp: App {
-    @StateObject var userViewModel = UserViewModel()
-    
-    init() {
-        FirebaseApp.configure()
-    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var userViewModel = UserViewModel(
+        userService: AuthManager.shared,
+        firestoreService: FirestoreManager.shared
+    )
     
     var body: some Scene {
         WindowGroup {

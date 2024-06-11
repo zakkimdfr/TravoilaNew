@@ -65,9 +65,9 @@ struct OnboardingView: View {
     }
 }
 
-//#Preview {
-//    OnboardingView(isOnboardingCompleted: $isOnboardingCompleted)
-//}
+#Preview {
+    OnboardingView(isOnboardingCompleted: .constant(false))
+}
 
 struct OnboardingStepView: View {
     var item: Onboard

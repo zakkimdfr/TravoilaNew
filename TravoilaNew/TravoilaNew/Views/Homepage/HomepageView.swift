@@ -24,7 +24,7 @@ struct HomepageView: View {
                                     .foregroundStyle(.white)
                                     .font(.system(size: 22, weight: .regular))
                                 
-                                if let currentUser = userViewModel.currentUser {
+                                if let currentUser = userViewModel.user {
                                     Text(currentUser.name)
                                         .foregroundStyle(.white)
                                         .font(.system(size: 22, weight: .semibold))
@@ -45,13 +45,17 @@ struct HomepageView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: LoginView()) {
-                            Button(action: {
-                                userViewModel.signOut()
-                            }) {
+                        NavigationLink(destination: ProfileView()) {
+                            ZStack {
                                 Circle()
-                                    .frame(width: 48, height: 48)
+                                    .frame(width: 50, height: 50)
                                     .foregroundColor(.white)
+                                
+                                Image(systemName: "person.fill")
+                                    .resizable()
+                                    .frame(width: 48, height: 48)
+                                    .foregroundColor(Color.themeColor(.primary))
+                                    .clipShape(Circle())
                             }
                         }
                     }
@@ -59,14 +63,6 @@ struct HomepageView: View {
                     
                     TripView()
                         .padding()
-                }
-            }
-            .onAppear {
-                print(userViewModel.fetchUserData())
-                if let name = UserDefaults.standard.object(forKey: "name") {
-                    print(name)
-                } else {
-                    print("Name not found in UserDefaults")
                 }
             }
         }
@@ -77,7 +73,7 @@ struct HomepageView: View {
 
 #Preview {
     HomepageView()
-        .environmentObject(UserViewModel())
+        .environmentObject(UserViewModel(userService: AuthManager.shared, firestoreService: FirestoreManager.shared))
 }
 
 struct BackgroundHomePage: View {

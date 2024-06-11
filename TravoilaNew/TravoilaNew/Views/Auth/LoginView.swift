@@ -31,7 +31,7 @@ struct LoginView: View {
                     
                     InputView(text: $email,
                               title: "Email",
-                              placeholder: "mail@example.com",
+                              placeholder: "Enter your email",
                               isSecured: false,
                               isShowed: $isShowed)
                     
@@ -48,9 +48,6 @@ struct LoginView: View {
                     NavigationLink(
                         destination: TabBarView(), isActive: $userViewModel.isLoggedIn) {
                             Button(action: {
-                                if userViewModel.authError != nil {
-                                    showAlert = true
-                                    showError = true                                }
                                 userViewModel.signIn(email: email, password: password)
                             }) {
                                 ButtonView(button: "Sign In")
@@ -59,11 +56,6 @@ struct LoginView: View {
                         }
                         .disabled(!formIsValid)
                         .opacity(formIsValid ? 1.0 : 0.5)
-                        .alert(isPresented: $showAlert) {
-                            Alert(title: Text("Authentication Error"),
-                                  message: Text(userViewModel.authError ?? "Unknown Error"),
-                                  dismissButton: .default(Text("OK")))
-                        }
                     
                     Text("OR")
                         .padding()
@@ -91,7 +83,7 @@ struct LoginView: View {
                         Text("Don't have account? | ")
                             .foregroundStyle(.white)
                         
-                        NavigationLink(destination: RegisterView(userViewModel: UserViewModel())) {
+                        NavigationLink(destination: RegisterView(userViewModel: UserViewModel(userService: AuthManager.shared, firestoreService: FirestoreManager.shared))) {
                             Text("Sign Up")
                                 .foregroundStyle(.black)
                                 .fontWeight(.semibold)
@@ -100,10 +92,10 @@ struct LoginView: View {
                     .padding()
                     
                 }
-            }
-            
-            if userViewModel.isLoading{
-                LoadingView()
+                
+                if userViewModel.isLoading {
+                    LoadingView()
+                }
             }
         }
         
@@ -113,7 +105,7 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(UserViewModel())
+        .environmentObject(UserViewModel(userService: AuthManager.shared, firestoreService: FirestoreManager.shared))
 }
 
 extension LoginView: AuthForm {

@@ -35,14 +35,13 @@ struct SplashScreenView: View {
             }
         }
         .onAppear {
-            userViewModel.loadUserFromUserDefault()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                withAnimation {
-                    self.isActive = true
-                    print(userViewModel.currentUser ?? "euweuhan")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        withAnimation {
+                            self.isActive = true
+                            print(userViewModel.user ?? "euweuhan")
+                        }
+                    }
                 }
-            }
-        }
     }
 }
 

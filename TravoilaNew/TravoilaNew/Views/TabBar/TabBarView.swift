@@ -9,60 +9,80 @@ import SwiftUI
 
 struct TabBarView: View {
     @State private var selectedTab = 0
+    @State var presented = false
     @EnvironmentObject var userViewModel: UserViewModel
     
+    let icons = [
+        "Overview",
+        "Plus",
+        "Notification"
+    ]
+    
     var body: some View {
-        TabView (selection: $selectedTab){
-            HomepageView()
-                .tabItem {
-                    VStack {
-                        Image(selectedTab == 0 ? "HomeActive" : "Home")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        Text("Overview")
-                            .font(.system(size: 12))
-                            .fontWeight(selectedTab == 0 ? .semibold : .regular)
+        VStack {
+            Spacer()
+            
+            ZStack {
+                switch selectedTab {
+                case 0:
+                    HomepageView()
+                    
+                case 1:
+                    AddTripView(isPresented: $presented)
+                    
+                default:
+                    NotificationView()
+
+                }
+                
+            }
+            
+            Spacer()
+            Divider()
+            
+            HStack(spacing: 45) {
+                ForEach(0..<3, id: \.self) { number in
+                    Button(action: {
+                        if number == 1 {
+                            presented.toggle()
+                        } else {
+                            self.selectedTab = number
+                        }
+                    }) {
+                        if number == 1 {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(width: 46, height: 46)
+                                    .foregroundColor(Color.themeColor(.primary))
+                                Image(icons[number])
+                            }
+                            
+                        } else {
+                            VStack {
+                                Image(icons[number])
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                
+                                Text(icons[number])
+                                    .font(.system(size: 12, weight: .regular))
+                                    .padding(.top, 2)
+                            }
+                        }
                     }
                 }
-                .tag(0)
-            
-            AddTripView()
-                .tabItem {
-                    Image(systemName: "plus")
-                         .resizable()
-                         .foregroundColor(.white)
-                         .background(
-                             RoundedRectangle(cornerRadius: 10)
-                                 .frame(width: 46, height: 46)
-                                 .foregroundColor(Color.themeColor(.primary))
-                             
-                         )
-                         .frame(width: 18, height: 18)
-                }
-                .tag(1)
-            
-            NotificationView()
-                .tabItem {
-                    VStack {
-                        Image(selectedTab == 2 ? "NotificationActive" : "Notification")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        Text("Notification")
-                            .font(.system(size: 12))
-                            .fontWeight(selectedTab == 2 ? .semibold : .regular)
-                    }
-                }
-                .tag(2)
+            }
         }
-        .accentColor(.themeColor(.primary))
-        .onAppear() {
-            print(userViewModel.currentUser ?? "kosong")
-            print(UserDefaults.standard.object(forKey: "name" ?? "kosong"))
-        }
+        .fullScreenCover(isPresented: $presented, content: {
+            AddTripView(isPresented: $presented)
+        })
+        .background(Color.white)
+        .ignoresSafeArea()
+        .padding(.bottom, 1)
     }
 }
 
 #Preview {
     TabBarView()
-        .environmentObject(UserViewModel())
+        .environmentObject(UserViewModel(userService: AuthManager.shared,
+                                         firestoreService: FirestoreManager.shared))
 }

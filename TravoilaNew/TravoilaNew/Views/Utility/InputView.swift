@@ -18,10 +18,11 @@ struct InputView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.white)
+
             
             HStack(alignment: .center) {
                 Text(title)
-                    .fontWeight(.semibold)
+                    .font(.system(size: 15, weight: .semibold))
                     .frame(width: 88.25, alignment: .leading)
                 
                 Spacer()
@@ -30,9 +31,11 @@ struct InputView: View {
                     if self.isSecured && !self.isShowed {
                         SecureField(placeholder, text: $text)
                             .frame(height: 22)
+                            .font(.system(size: 15, weight: .regular))
                     } else {
                         TextField(placeholder, text: $text)
                             .frame(height: 22)
+                            .font(.system(size: 15, weight: .regular))
                     }
                     
                     if isSecured {

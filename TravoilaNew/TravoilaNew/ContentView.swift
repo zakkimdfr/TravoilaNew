@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @EnvironmentObject var userViewModel: UserViewModel
     
+    
+    init(){
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
-        SplashScreenView()
-            .environmentObject(UserViewModel())
+       SplashScreenView()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

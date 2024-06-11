@@ -6,143 +6,139 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
+@MainActor
 class UserViewModel: ObservableObject {
-    @Published var currentUser: UserModel?
+    @Published var user: UserModel?
     @Published var isLoggedIn: Bool = false
     @Published var isRegistered: Bool = false
-    @Published var authError: String?
+    @Published var errorMessage: String?
+    @Published var passwordResetSent: Bool = false
+    @Published var filteredUsers: [UserModel] = []
+    @Published var searchedUsers: [UserModel] = []
+    @Published var userSession: FirebaseAuth.User?
     @Published var isLoading: Bool = false
     
-    init() {
-        loadUserFromUserDefault()
+    private let userService: UserService
+    private let firestoreService: FirestoreService
+    
+    private let userDefaults = UserDefaults.standard
+    private let userSessionKey = "userSessionKey"
+    
+    init(userService: UserService, firestoreService: FirestoreService) {
+        self.userService = userService
+        self.firestoreService = firestoreService
+        self.restoreUserSession()
+    }
+    
+    func signUp(name: String, email: String, password: String) {
+        isLoading = true
+        userService.signUp(email: email, password: password) { result in
+            switch result {
+            case .success(let firebaseUser):
+                self.user = UserModel(uid: firebaseUser.uid,
+                                      name: name,
+                                      email: email,
+                                      password: password)
+                self.isRegistered = true
+                self.saveToFirebase()
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                self.isRegistered = false
+            }
+        }
     }
     
     func signIn(email: String, password: String) {
         isLoading = true
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            self?.isLoading = false
-            if let error = error {
-                self?.authError = error.localizedDescription
-                self?.isLoggedIn = false
-            } else {
-                self?.isLoggedIn = true
-                self?.fetchUserData()
-                self?.saveUserToUserDefault()
+        userService.signIn(email: email, password: password) { result in
+            switch result {
+            case .success(let firebaseUser):
+                self.user = UserModel(uid: firebaseUser.uid, name: "", email: email, password: password)
+                self.isLoggedIn = true
+                self.fetchUserDetails()
+                self.saveUserSession()
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                self.isLoggedIn = false
             }
         }
-    }
-    
-    func signUp(uid: String, name: String, email: String, password: String, picture: String) {
-        isLoading = true
-        authError = nil
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            self?.isLoading = false
-            if let error = error {
-                self?.authError = error.localizedDescription
-                self?.isRegistered = false
-            } else {
-                guard let user = result?.user else { return }
-                let uid = user.uid
-                self?.saveUserToFirestore(uid: uid, name: name , email: email, password: password, picture: picture)
-            }
-        }
-    }
-    
-    func saveUserToFirestore(uid: String, name: String, email: String, password: String, picture: String) {
-        let db = Firestore.firestore()
-        db.collection("users").document(uid).setData([
-            "uid": uid,
-            "name": name,
-            "email": email,
-            "password": password,
-            "picture": picture
-        ]) { error in
-            if let error = error {
-                print("Error saving user data: \(error)")
-                self.authError = error.localizedDescription
-                self.isRegistered = false
-            } else {
-                self.currentUser = UserModel(uid: uid, name: name, email: email, password: password, picture: picture)
-                self.isRegistered = true
-                self.saveUserToUserDefault()
-            }
-        }
-    }
-    
-    func fetchUserData() {
-        guard let user = Auth.auth().currentUser else {return}
-        let db = Firestore.firestore()
-        db.collection("users").document(user.uid).getDocument { [weak self] document, error in
-            if let document = document, document.exists, let data = document.data() {
-                let uid = data["uid"] as? String ?? ""
-                let name = data["name"] as? String ?? ""
-                let email = data["email"] as? String ?? ""
-                let password = data["password"] as? String ?? ""
-                let picture = data["picture"] as? String ?? ""
-                self?.currentUser = UserModel(uid: uid, name: name, email: email, password: password, picture: picture)
-            } else {
-                print("user does not exist")
-            }
-        }
-    }
-    
-    func updateUser(name: String, email: String, picture: String) {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        let db = Firestore.firestore()
-        db.collection("users").document(uid).updateData([
-            "name": name,
-            "email": email,
-            "picture": picture
-        ]) { error in
-            if let error = error {
-                print("Error updating user data: \(error)")
-                self.authError = error.localizedDescription
-            } else {
-                self.currentUser?.name = name
-                self.currentUser?.email = email
-                self.currentUser?.picture = picture
-            }
-        }
-    }
-    
-    func saveUserToUserDefault() {
-        guard let user = currentUser else { return }
-        UserDefaults.standard.set(user.uid, forKey: "uid")
-        UserDefaults.standard.set(user.name, forKey: "name")
-        UserDefaults.standard.set(user.email, forKey: "email")
-        UserDefaults.standard.set(user.password, forKey: "password")
-        UserDefaults.standard.set(user.picture, forKey: "picture")
-        UserDefaults.standard.synchronize()
-    }
-    
-    func loadUserFromUserDefault() {
-        guard let uid = UserDefaults.standard.string(forKey: "uid"),
-              let name = UserDefaults.standard.string(forKey: "name"),
-              let email = UserDefaults.standard.string(forKey: "email"),
-              let password = UserDefaults.standard.string(forKey: "password"),
-              let picture = UserDefaults.standard.string(forKey: "picture") else {
-            self.isLoggedIn = false
-            return
-        }
-        self.currentUser = UserModel(uid: uid, name: name, email: email, password: password, picture: picture)
-        self.isLoggedIn = true
-    }
-    
-    func removeUserFromUserDefault() {
-        UserDefaults.standard.removeObject(forKey: "uid")
-        UserDefaults.standard.removeObject(forKey: "name")
-        UserDefaults.standard.removeObject(forKey: "email")
-        UserDefaults.standard.removeObject(forKey: "password")
-        UserDefaults.standard.removeObject(forKey: "picture")
     }
     
     func signOut() {
-        try? Auth.auth().signOut()
-        self.currentUser = nil
-        self.isLoggedIn = false
-        removeUserFromUserDefault()
+        isLoading = false
+        userService.signOut { error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            } else {
+                self.user = nil
+                self.isLoggedIn = false
+                self.clearUserSession()
+            }
+        }
+    }
+    
+    func saveToFirebase() {
+        guard let user = user else { return }
+        firestoreService.saveUser(user: user) { error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
+    func updateUserDetails(completion: @escaping (Bool) -> Void) {
+        guard let user = user else {
+            completion(false)
+            return
+        }
+        firestoreService.updateUser(user: user) { error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
+    
+    func fetchUserDetails() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        firestoreService.fetchUser(uid: uid) { result in
+            switch result {
+            case .success(let user):
+                self.user = user
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
+    private func saveUserSession() {
+        userDefaults.set(user?.uid, forKey: userSessionKey)
+    }
+    
+    
+    private func restoreUserSession() {
+        if let uid = userDefaults.string(forKey: userSessionKey) {
+            Auth.auth().addStateDidChangeListener { auth, user in
+                if let user = user {
+                    self.userSession = user
+                    self.user = UserModel(uid: user.uid, name: "", email: user.email ?? "", password: "")
+                    self.isLoggedIn = true
+                    self.fetchUserDetails()
+                } else {
+                    self.errorMessage = "User not found"
+                    self.isLoggedIn = false
+                }
+            }
+        }
+    }
+    
+    private func clearUserSession() {
+        userDefaults.removeObject(forKey: userSessionKey)
     }
 
     func isValidEmail(_ email: String) -> Bool {

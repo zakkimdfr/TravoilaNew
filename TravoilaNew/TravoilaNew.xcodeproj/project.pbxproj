@@ -13,6 +13,13 @@
 		C305C1FC2C102F4A00830ADE /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1FB2C102F4A00830ADE /* AddButtonView.swift */; };
 		C305C1FE2C10318800830ADE /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C1FD2C10318800830ADE /* AddTripView.swift */; };
 		C305C2012C1044C600830ADE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2002C1044C600830ADE /* Services.swift */; };
+		C305C2042C109C6A00830ADE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2032C109C6A00830ADE /* ProfileView.swift */; };
+		C305C2062C145DC600830ADE /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2052C145DC600830ADE /* CustomBackButton.swift */; };
+		C305C2092C148F4500830ADE /* ColoredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2082C148F4500830ADE /* ColoredButtonView.swift */; };
+		C305C20B2C173E8E00830ADE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C20A2C173E8E00830ADE /* CustomTabBar.swift */; };
+		C305C20D2C173EBA00830ADE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C20C2C173EBA00830ADE /* Helper.swift */; };
+		C305C20F2C183FFA00830ADE /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C20E2C183FFA00830ADE /* AuthManager.swift */; };
+		C305C2112C18405A00830ADE /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C305C2102C18405A00830ADE /* FirestoreManager.swift */; };
 		C30F4A122BF459E900F6734F /* TravoilaNewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A112BF459E900F6734F /* TravoilaNewApp.swift */; };
 		C30F4A142BF459E900F6734F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F4A132BF459E900F6734F /* ContentView.swift */; };
 		C30F4A162BF459EA00F6734F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30F4A152BF459EA00F6734F /* Assets.xcassets */; };
@@ -63,6 +70,13 @@
 		C305C1FB2C102F4A00830ADE /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		C305C1FD2C10318800830ADE /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		C305C2002C1044C600830ADE /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		C305C2032C109C6A00830ADE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C305C2052C145DC600830ADE /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		C305C2082C148F4500830ADE /* ColoredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButtonView.swift; sourceTree = "<group>"; };
+		C305C20A2C173E8E00830ADE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		C305C20C2C173EBA00830ADE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C305C20E2C183FFA00830ADE /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C305C2102C18405A00830ADE /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		C30F4A0E2BF459E900F6734F /* TravoilaNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravoilaNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30F4A112BF459E900F6734F /* TravoilaNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravoilaNewApp.swift; sourceTree = "<group>"; };
 		C30F4A132BF459E900F6734F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,8 +144,27 @@
 			isa = PBXGroup;
 			children = (
 				C305C2002C1044C600830ADE /* Services.swift */,
+				C305C20E2C183FFA00830ADE /* AuthManager.swift */,
+				C305C2102C18405A00830ADE /* FirestoreManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C305C2022C109C5F00830ADE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C305C2032C109C6A00830ADE /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C305C2072C14899000830ADE /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				C385543D2C041422006FA683 /* TripView.swift */,
+				C305C1FD2C10318800830ADE /* AddTripView.swift */,
+			);
+			path = Trip;
 			sourceTree = "<group>";
 		};
 		C30F4A052BF459E900F6734F = {
@@ -198,6 +231,8 @@
 		C30F4A3B2BF45AB000F6734F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C305C2072C14899000830ADE /* Trip */,
+				C305C2022C109C5F00830ADE /* Profile */,
 				C305C1F62C0C996600830ADE /* Auth */,
 				C38D2B342C05979C00C3648A /* TabBar */,
 				C38D2B322C05975900C3648A /* Utility */,
@@ -231,8 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				C30F4A3C2BF45B0F00F6734F /* HomepageView.swift */,
-				C385543D2C041422006FA683 /* TripView.swift */,
-				C305C1FD2C10318800830ADE /* AddTripView.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -246,6 +279,10 @@
 				C305C1F72C0CA2C500830ADE /* LearnView.swift */,
 				C305C1F92C0CABF500830ADE /* ButtonView.swift */,
 				C305C1FB2C102F4A00830ADE /* AddButtonView.swift */,
+				C305C2052C145DC600830ADE /* CustomBackButton.swift */,
+				C305C2082C148F4500830ADE /* ColoredButtonView.swift */,
+				C305C20A2C173E8E00830ADE /* CustomTabBar.swift */,
+				C305C20C2C173EBA00830ADE /* Helper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -397,22 +434,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30F4A472BF45EFF00F6734F /* LoginView.swift in Sources */,
+				C305C20F2C183FFA00830ADE /* AuthManager.swift in Sources */,
 				C30F4A5E2BF6F94C00F6734F /* UserViewModel.swift in Sources */,
 				C30F4A3D2BF45B0F00F6734F /* HomepageView.swift in Sources */,
+				C305C2112C18405A00830ADE /* FirestoreManager.swift in Sources */,
 				C305C2012C1044C600830ADE /* Services.swift in Sources */,
 				C38D2B382C05C11F00C3648A /* NotificationView.swift in Sources */,
+				C305C20D2C173EBA00830ADE /* Helper.swift in Sources */,
 				C38D2B302C0480BC00C3648A /* RegisterView.swift in Sources */,
 				C30F4A3F2BF45B2800F6734F /* OnboardingView.swift in Sources */,
 				C385543C2C008716006FA683 /* ShowErrorView.swift in Sources */,
 				C305C1F82C0CA2C500830ADE /* LearnView.swift in Sources */,
+				C305C2062C145DC600830ADE /* CustomBackButton.swift in Sources */,
 				C385543A2BFF296E006FA683 /* LoadingView.swift in Sources */,
 				C305C1F52C0C936A00830ADE /* InputView.swift in Sources */,
 				C30F4A412BF45B8500F6734F /* Theme.swift in Sources */,
 				C385543E2C041422006FA683 /* TripView.swift in Sources */,
 				C30F4A4D2BF46FB900F6734F /* OnboardingModel.swift in Sources */,
 				C30F4A142BF459E900F6734F /* ContentView.swift in Sources */,
+				C305C20B2C173E8E00830ADE /* CustomTabBar.swift in Sources */,
 				C30F4A122BF459E900F6734F /* TravoilaNewApp.swift in Sources */,
+				C305C2092C148F4500830ADE /* ColoredButtonView.swift in Sources */,
 				C30F4A5C2BF6409800F6734F /* UserModel.swift in Sources */,
+				C305C2042C109C6A00830ADE /* ProfileView.swift in Sources */,
 				C305C1FA2C0CABF500830ADE /* ButtonView.swift in Sources */,
 				C305C1FE2C10318800830ADE /* AddTripView.swift in Sources */,
 				C38D2B362C0597AE00C3648A /* TabBarView.swift in Sources */,
